@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="16" fill="#f6efe2"/>
+  <ellipse cx="100" cy="168" rx="82" ry="18" fill="#d9c9a3"/>
+  <g>
+    <rect x="32" y="118" width="136" height="38" rx="8" fill="#5b2a86"/>
+    <rect x="32" y="142" width="136" height="6" fill="#d4af37"/>
+    <polyline points="40,132 50,124 60,132 70,124 80,132 90,124 100,132 110,124 120,132 130,124 140,132 150,124 160,132" fill="none" stroke="#d4af37" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="42" y="84" width="116" height="36" rx="8" fill="#8c2f39"/>
+    <rect x="42" y="106" width="116" height="5" fill="#f2d09b"/>
+    <circle cx="62" cy="98" r="4" fill="#f2d09b"/>
+    <circle cx="86" cy="98" r="4" fill="#f2d09b"/>
+    <circle cx="110" cy="98" r="4" fill="#f2d09b"/>
+    <circle cx="134" cy="98" r="4" fill="#f2d09b"/>
+  </g>
+  <g>
+    <rect x="52" y="50" width="96" height="36" rx="8" fill="#1d4e89"/>
+    <rect x="52" y="72" width="96" height="5" fill="#ffffff"/>
+    <polyline points="60,64 68,57 76,64 84,57 92,64 100,57 108,64 116,57 124,64 132,57 140,64" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+  </g>
+  <path d="M148,86 q22,10 14,34 l-14,-4 z" fill="#8c2f39"/>
+  <path d="M52,120 q-20,12 -10,32 l12,-6 z" fill="#5b2a86"/>
+</svg>

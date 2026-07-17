@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="16" fill="#fdeade"/>
+  <rect x="12" y="176" width="176" height="7" rx="3.5" fill="#9c7a45"/>
+  <rect x="12" y="188" width="176" height="7" rx="3.5" fill="#9c7a45"/>
+  <rect x="34" y="164" width="132" height="13" rx="4" fill="#c8a165"/>
+  <g transform="translate(100,0)">
+    <polygon points="-14,44 -20,16 -6,34 0,8 6,34 20,16 14,44" fill="#ff6d1f"/>
+    <polygon points="-8,42 -10,24 0,36 10,24 8,42" fill="#ffb703"/>
+    <circle cx="0" cy="70" r="28" fill="#a03030"/>
+    <ellipse cx="-11" cy="66" rx="9" ry="10" fill="#ffffff"/>
+    <ellipse cx="11" cy="66" rx="9" ry="10" fill="#ffffff"/>
+    <circle cx="-11" cy="68" r="4" fill="#111111"/>
+    <circle cx="11" cy="68" r="4" fill="#111111"/>
+    <rect x="-20" y="52" width="16" height="5" rx="2.5" transform="rotate(14 -12 54)" fill="#33130f"/>
+    <rect x="4" y="52" width="16" height="5" rx="2.5" transform="rotate(-14 12 54)" fill="#33130f"/>
+    <path d="M-14,84 Q0,94 14,84 L14,90 Q0,100 -14,90 Z" fill="#4a0f0f"/>
+    <polygon points="-12,86 -8,96 -4,87" fill="#ffffff"/>
+    <polygon points="12,86 8,96 4,87" fill="#ffffff"/>
+    <circle cx="-28" cy="74" r="5" fill="#d4af37"/>
+    <circle cx="28" cy="74" r="5" fill="#d4af37"/>
+    <ellipse cx="0" cy="124" rx="24" ry="28" fill="#8f2727"/>
+    <rect x="-38" y="96" width="34" height="10" rx="5" transform="rotate(40 -38 96)" fill="#8f2727"/>
+    <rect x="4" y="96" width="34" height="10" rx="5" transform="rotate(-40 38 96)" fill="#8f2727"/>
+    <circle cx="-52" cy="80" r="8" fill="#a03030"/>
+    <circle cx="52" cy="80" r="8" fill="#a03030"/>
+    <polygon points="-56,72 -52,64 -48,72" fill="#a03030"/>
+    <polygon points="48,72 52,64 56,72" fill="#a03030"/>
+  </g>
+  <g>
+    <rect x="76" y="140" width="12" height="12" fill="#111111"/>
+    <rect x="88" y="140" width="12" height="12" fill="#ffffff"/>
+    <rect x="100" y="140" width="12" height="12" fill="#111111"/>
+    <rect x="112" y="140" width="12" height="12" fill="#ffffff"/>
+    <rect x="76" y="152" width="12" height="12" fill="#ffffff"/>
+    <rect x="88" y="152" width="12" height="12" fill="#111111"/>
+    <rect x="100" y="152" width="12" height="12" fill="#ffffff"/>
+    <rect x="112" y="152" width="12" height="12" fill="#111111"/>
+  </g>
+</svg>

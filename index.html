@@ -353,7 +353,7 @@
       overflow-y: auto;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 20px;
       z-index: 10;
     }
@@ -370,6 +370,7 @@
       gap: 35px;
       position: relative;
       padding: 20px 0;
+      margin: auto 0; /* tengah saat muat, tetap bisa discroll saat 4 level melebihi layar */
     }
 
     /* Garis Jalan Ilustrasi Belakang Lampu Lurus */
@@ -441,6 +442,7 @@
       border-radius: 5px;
       margin-bottom: 4px;
     }
+    .pillar-budaya { background: #b45309; }
     .pillar-parahyangan { background: #b91c1c; }
     .pillar-pawongan { background: #1d4ed8; }
     .pillar-palemahan { background: #15803d; }
@@ -978,19 +980,24 @@
 
   <div class="map-scroll-viewport">
     <div class="map-grid-container">
-      <div class="category-card" id="lvlcard-1" onclick="selectLevel(1, 'Parahyangan')">
-        <span class="thk-pillar pillar-parahyangan">Level 1</span>
+      <div class="category-card" id="lvlcard-1" onclick="selectLevel(1, 'Budaya Bali')">
+        <span class="thk-pillar pillar-budaya">Level 1</span>
         <div class="lamp-frame"><img id="lamp-img-1" src="lampu1.png" class="lamp-img" /></div>
+        <div class="category-label">Budaya Bali</div>
+      </div>
+      <div class="category-card" id="lvlcard-2" onclick="selectLevel(2, 'Parahyangan')">
+        <span class="thk-pillar pillar-parahyangan">Level 2</span>
+        <div class="lamp-frame"><img id="lamp-img-2" src="lampu1.png" class="lamp-img" /></div>
         <div class="category-label">Parahyangan</div>
       </div>
-      <div class="category-card" id="lvlcard-2" onclick="selectLevel(2, 'Pawongan')">
-        <span class="thk-pillar pillar-pawongan">Level 2</span>
-        <div class="lamp-frame"><img id="lamp-img-2" src="lampu2.png" class="lamp-img" /></div>
+      <div class="category-card" id="lvlcard-3" onclick="selectLevel(3, 'Pawongan')">
+        <span class="thk-pillar pillar-pawongan">Level 3</span>
+        <div class="lamp-frame"><img id="lamp-img-3" src="lampu2.png" class="lamp-img" /></div>
         <div class="category-label">Pawongan</div>
       </div>
-      <div class="category-card" id="lvlcard-3" onclick="selectLevel(3, 'Palemahan')">
-        <span class="thk-pillar pillar-palemahan">Level 3</span>
-        <div class="lamp-frame"><img id="lamp-img-3" src="lampu3.png" class="lamp-img" /></div>
+      <div class="category-card" id="lvlcard-4" onclick="selectLevel(4, 'Palemahan')">
+        <span class="thk-pillar pillar-palemahan">Level 4</span>
+        <div class="lamp-frame"><img id="lamp-img-4" src="lampu3.png" class="lamp-img" /></div>
         <div class="category-label">Palemahan</div>
       </div>
     </div>
@@ -1105,8 +1112,27 @@
   // ================================================================
   //  DATABASE SOAL LENTERA BALI (10 PG + 5 Cocokkan Gambar Per Level)
   // ================================================================
+  const levelNames = { 1: 'Budaya Bali', 2: 'Parahyangan', 3: 'Pawongan', 4: 'Palemahan' };
+
   const quizDatabase = {
-    1: [ // PARAHYANGAN
+    1: [ // BUDAYA BALI (Makanan, Pakaian & Hari Raya) - level pengenalan paling simpel
+      { q: "Jaja Bali ane bunter tur gadang, misi gula barak, kasambehin parutan nyuh, madan...", o: ["Donat", "Klepon", "Roti", "Bakso"], c: 1, img: "cocokpawo3.jpeg" },
+      { q: "Sate khas Bali ane dagingne kalilitang di katikne madan...", o: ["Sate lilit", "Sate ayam", "Sate kambing", "Sate padang"], c: 0, img: "satelilit.svg" },
+      { q: "Ajengan khas Bali ane malakar aji jukut tur parutan nyuh mabasa madan...", o: ["Bakso", "Mie goreng", "Lawar", "Pizza"], c: 2, img: "lawar.svg" },
+      { q: "Anak muani yen ka pura nganggon ikat sirah ane madan...", o: ["Topi", "Helm", "Peci", "Udeng"], c: 3, img: "udeng.svg" },
+      { q: "Kain ane kailitang di bangkiange yen mabusana adat Bali madan...", o: ["Kamen", "Celana", "Rok", "Topi"], c: 0, img: "kamen.svg" },
+      { q: "Baju ane kaanggon anak luh yen ka pura madan...", o: ["Kaos", "Kebaya", "Jaket", "Piyama"], c: 1, img: "kebaya.svg" },
+      { q: "Rerahinan ane ngranayang gumi Baline sepi tur anake tusing pesu uli jumah madan...", o: ["Galungan", "Kuningan", "Nyepi", "Saraswati"], c: 2, img: "nyepi.svg" },
+      { q: "Awai satonden Nyepi, anake ngarak togog gede ane aeng madan...", o: ["Ogoh-ogoh", "Wayang", "Robot", "Boneka salju"], c: 0, img: "ogohogoh.svg" },
+      { q: "Rikala Galungan, di arep umahe kapasang tiing melengkung mapayas janur madan...", o: ["Bendera", "Penjor", "Umbul-umbul", "Layangan"], c: 1, img: "cocokparah3.png" },
+      { q: "Rerahinan ngerayaang ilmu pengetahuan, rikala buku lan lontare kabantenin, madan...", o: ["Nyepi", "Galungan", "Kuningan", "Saraswati"], c: 3, img: "parah5.png" },
+      { type: "text-to-image", text: "Klepon", img: "cocokpawo3.jpeg" },
+      { type: "text-to-image", text: "Sate Lilit", img: "satelilit.svg" },
+      { type: "text-to-image", text: "Udeng", img: "udeng.svg" },
+      { type: "text-to-image", text: "Kebaya", img: "kebaya.svg" },
+      { type: "text-to-image", text: "Penjor", img: "cocokparah3.png" }
+    ],
+    2: [ // PARAHYANGAN
       { q: "Wewidangan utawi genah suci anggen umat Hindu maturan kawastanin...", o: ["Pura", "Bale banjar", "Sekolah", "Pasar"], c: 0, img: "parah1.png" },
       { q: "Tuhan ring agama Hindu kawastanin...", o: ["Sang Hyang Widhi Wasa", "Ratu Gede", "Jero Gede", "Mpu"], c: 0, img: "parah2.png" },
       { q: "Umat Hindu nunas ica ring Sang Hyang Widhi antuk ngaturang...", o: ["Sesajen miwah banten", "Pipis miwah perhiasan", "Batik miwah anduk", "Sepatu miwah tas"], c: 0, img: "parah3.png" },
@@ -1123,7 +1149,7 @@
       { type: "text-to-image", text: "Mebakti", img: "cocokparah5.png" },
       { type: "text-to-image", text: "Pura Tanah Lot", img: "cocokparah4.png" }
     ],
-    2: [ // PAWONGAN (UPDATE SOAL MENCOCOKKAN PANJANG / CECIMPEDAN)
+    3: [ // PAWONGAN (UPDATE SOAL MENCOCOKKAN PANJANG / CECIMPEDAN)
       { q: "Ngajak nyama patutne saling tulungin. Saling tulungin nyiriang idupe....", o: ["Sugih", "Uyut", "Lacur", "Adung"], c: 3, img: "pawo1.png" },
       { q: "Rai demen masilihang teken timpale ane sing ngelah. Ento bacakan Solah ane....", o: ["Melah", "Jele", "Mayus", "Lengit"], c: 0, img: "pawo2.png" },
       { q: "Rerama sesai maang pitutur. Pitutur rerama patut....", o: ["Resepang", "Kelidin", "Saruin", "Kalahin"], c: 0, img: "pawo3.png" },
@@ -1140,7 +1166,7 @@
       { type: "text-to-image", text: "Apaké menék bajang, tuun tua?", img: "cocokpawo4.jpg", answerLabel: "Matan ai" },
       { type: "text-to-image", text: "Apaké tolih ngejoh-ngejohang?", img: "cocokpawo5.jpg", answerLabel: "Kuping (Telinga)" }
     ],
-    3: [ // PALEMAHAN
+    4: [ // PALEMAHAN
       { q: "Contoh sane ngamargiang pelestarian alam inggih punika ....", o: ["Ngutang luhu ring tukad", "Nanem entik-entikan", "Nembak kedis", "Ngusak alas"], c: 1, img: "paleh1.png" },
       { q: "Ngutang luu patutné di....", o: ["Tukad", "Sémér", "Got", "Tong sampah"], c: 3, img: "paleh2.png" },
       { q: "Iraga patut nyaga kabresihan déwék lan lingkungan apang setata…", o: ["Seger", "Kual", "Kumel", "Daki"], c: 0, img: "paleh3.png" },
@@ -1162,8 +1188,9 @@
   // LINK KONEKSI AR SPASIAL VIRTUAL TOUR 360 BERDASARKAN TINGKAT LEVEL
   const arDatabaseLinks = {
     1: "https://viewer.virtualtoureasy.com/?r=3xVcYDfAtJ",
-    2: "https://viewer.virtualtoureasy.com/?r=YvLu3pVjMd",
-    3: "https://viewer.virtualtoureasy.com/?r=TTbPZ8ajNS"
+    2: "https://viewer.virtualtoureasy.com/?r=3xVcYDfAtJ",
+    3: "https://viewer.virtualtoureasy.com/?r=YvLu3pVjMd",
+    4: "https://viewer.virtualtoureasy.com/?r=TTbPZ8ajNS"
   };
 
   // ================================================================
@@ -1251,8 +1278,7 @@
 
   function startAutoGame() {
     const currentProgress = parseInt(localStorage.getItem('unlockedLevel')) || 1;
-    const cat = currentProgress === 1 ? 'Parahyangan' : currentProgress === 2 ? 'Pawongan' : 'Palemahan';
-    selectLevel(currentProgress, cat);
+    selectLevel(currentProgress, levelNames[currentProgress] || 'Budaya Bali');
   }
 
   function renderMapProgress() {
@@ -1264,7 +1290,7 @@
 
     const unlocked = parseInt(localStorage.getItem('unlockedLevel')) || 1;
 
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       const card = document.getElementById('lvlcard-' + i);
       if (i > unlocked) {
         card.classList.add('locked');
@@ -1292,8 +1318,8 @@
     connectedMatches = [];
     selectedLeftNode = null;
 
-    const catName = currentLevel === 1 ? 'PARAHYANGAN' : currentLevel === 2 ? 'PAWONGAN' : 'PALEMAHAN';
-    document.getElementById('level-title').innerText = 'KATEGORI: ' + catName;
+    const catName = (levelNames[currentLevel] || 'Budaya Bali').toUpperCase();
+    document.getElementById('level-title').innerText = 'LEVEL ' + currentLevel + ': ' + catName;
     document.getElementById('live-score').innerText = score;
 
     document.getElementById('reward-popup').style.display = 'none';
@@ -1395,9 +1421,9 @@
     selectedLeftNode = null;
 
     const instrText = document.getElementById('matching-instruction-text');
-    if (currentLevel === 3) {
+    if (currentLevel === 4) {
       instrText.innerText = "Hubungkan Gambar di Kiri dengan Gambar yang Sesuai di Kanan!";
-    } else if (currentLevel === 2) {
+    } else if (currentLevel === 3) {
       instrText.innerText = "Hubungkan Cecimpedan (Teka-teki) di Kiri dengan Gambar & Jawaban di Kanan!";
     } else {
       instrText.innerText = "Hubungkan Kata di Kiri dengan Gambar yang Sesuai di Kanan!";
@@ -1440,7 +1466,7 @@
       node.dataset.id = item.originalIdx;
 
       let htmlContent = `<div class="match-node-img-box"><img src="${item.img}" class="match-node-img"></div>`;
-      if (currentLevel === 2) {
+      if (currentLevel === 3) {
         node.style.flexDirection = 'column';
         htmlContent += `<div class="match-node-text" style="font-size: 0.7rem; margin-top: 5px; font-weight: bold; color: #542c0e; text-align: center;">${item.label}</div>`;
       }
@@ -1561,7 +1587,7 @@
       arFrame.src = arDatabaseLinks[currentLevel] || "";
     }
 
-    if (currentLevel >= 3) {
+    if (currentLevel >= 4) {
       nextBtn.innerText = "Simpan & Selesai Kuis 🏁";
     } else {
       nextBtn.innerText = "Level Selanjutnya →";
@@ -1588,10 +1614,9 @@
     saveProgressState();
     closeARMode();
 
-    if (currentLevel < 3) {
+    if (currentLevel < 4) {
       const nextLvl = currentLevel + 1;
-      const categories = { 2: "Pawongan", 3: "Palemahan" };
-      selectLevel(nextLvl, categories[nextLvl]);
+      selectLevel(nextLvl, levelNames[nextLvl]);
     } else {
       navigateTo('peta');
     }
@@ -1599,7 +1624,7 @@
 
   function saveProgressState() {
     const unlocked = parseInt(localStorage.getItem('unlockedLevel')) || 1;
-    if (currentLevel === unlocked && unlocked < 3) {
+    if (currentLevel === unlocked && unlocked < 4) {
       localStorage.setItem('unlockedLevel', unlocked + 1);
     }
     const prevScore = parseInt(localStorage.getItem('totalScore')) || 0;

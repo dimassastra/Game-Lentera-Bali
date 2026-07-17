@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="16" fill="#fdeaf2"/>
+  <rect x="58" y="168" width="84" height="32" fill="#5b2a86"/>
+  <rect x="58" y="168" width="84" height="32" fill="none"/>
+  <polyline points="62,190 72,182 82,190 92,182 102,190 112,182 122,190 132,182 140,190" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <rect x="58" y="152" width="84" height="18" rx="4" fill="#facc15"/>
+  <path d="M60,152 L64,96 Q82,84 100,84 Q118,84 136,96 L140,152 Z" fill="#f28ab2"/>
+  <path d="M100,84 L86,110 L100,132 L114,110 Z" fill="#fce4ef"/>
+  <path d="M64,98 Q46,108 44,138 L60,142 Z" fill="#f28ab2"/>
+  <path d="M136,98 Q154,108 156,138 L140,142 Z" fill="#f28ab2"/>
+  <circle cx="74" cy="104" r="2.6" fill="#ffffff"/>
+  <circle cx="80" cy="120" r="2.6" fill="#ffffff"/>
+  <circle cx="72" cy="136" r="2.6" fill="#ffffff"/>
+  <circle cx="126" cy="104" r="2.6" fill="#ffffff"/>
+  <circle cx="120" cy="120" r="2.6" fill="#ffffff"/>
+  <circle cx="128" cy="136" r="2.6" fill="#ffffff"/>
+  <circle cx="100" cy="146" r="2.6" fill="#ffffff"/>
+  <circle cx="100" cy="54" r="30" fill="#f0c8a0"/>
+  <path d="M70,50 A30,30 0 0 1 130,50 Q130,36 100,32 Q70,36 70,50 Z" fill="#33261a"/>
+  <path d="M70,50 Q66,58 70,64 L74,50 Z" fill="#33261a"/>
+  <path d="M130,50 Q134,58 130,64 L126,50 Z" fill="#33261a"/>
+  <circle cx="132" cy="38" r="10" fill="#33261a"/>
+  <g transform="translate(140,32)">
+    <circle cx="0" cy="-5" r="3.6" fill="#fff8dc"/>
+    <circle cx="4.8" cy="-1.5" r="3.6" fill="#fff8dc"/>
+    <circle cx="3" cy="4" r="3.6" fill="#fff8dc"/>
+    <circle cx="-3" cy="4" r="3.6" fill="#fff8dc"/>
+    <circle cx="-4.8" cy="-1.5" r="3.6" fill="#fff8dc"/>
+    <circle cx="0" cy="0" r="2.8" fill="#facc15"/>
+  </g>
+  <circle cx="88" cy="56" r="4" fill="#33261a"/>
+  <circle cx="112" cy="56" r="4" fill="#33261a"/>
+  <circle cx="80" cy="66" r="4.6" fill="#f2a19b" opacity="0.7"/>
+  <circle cx="120" cy="66" r="4.6" fill="#f2a19b" opacity="0.7"/>
+  <path d="M90,68 Q100,76 110,68" fill="none" stroke="#33261a" stroke-width="3.4" stroke-linecap="round"/>
+</svg>
